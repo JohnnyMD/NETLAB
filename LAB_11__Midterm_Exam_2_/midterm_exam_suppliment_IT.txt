@@ -1,0 +1,33 @@
+NETLAB Midterm exam supplement (31/05/2019)
+
+Student: Ion Tataru
+
+
+[7] The complete ACLs set for satisfy all the requirements: 
+
+
+1) ACL <www>   for R1  -  Serial 2/0  -  INBOUND:
+
+		deny 	tcp   any  	11.0.99.0  0.0.0.255  	eq www   		// [d]
+		deny 	icmp  any 	any										// [b]
+		permit 	ip 	  any 	any
+
+
+2) ACL <99_00> for R1  -  Fa0/0 (vlan 99 interface)  - INBOUND:
+
+		permit 	ip 	  11.0.99.0  0.0.0.255 	11.0.80.0  0.0.0.255 	// [d]
+		deny 	tcp   11.0.99.0  0.0.0.255 	any  	eq www			// [d]
+		permit 	ip 	  any  any
+
+
+3) ACL <www>    for R0  -  Serial 2/0  - INBOUND:
+
+		deny 	icmp  any  any										// [b]
+		permit 	ip    any  any										
+
+
+4) ACL <f_00>	for R0  -  Fa0/0.10 (vlan 10 (sub)interface)  - INBOUND: 
+
+		deny 	udp   host 11.0.10.100  host 11.0.20.105						// [a]
+		deny 	tcp   11.0.10.0  0.0.0.255    11.0.80.0  0.0.0.255  eq www		// [c]
+		permit 	ip 	  any  any
