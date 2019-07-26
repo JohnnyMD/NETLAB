@@ -93,7 +93,7 @@
 
 -   <u>Show the running RIPv1 configuration</u>:
     `R                #  show running-config` ;
-    .![1555308215211](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1555308215211.png)
+    . ![1555308215211](assets/1555308215211.png)
 
     
 
@@ -147,7 +147,9 @@
 
 ##### LSA *(Link State Advertisement)*
 
--   An ***LSA*** is composed of a <u>*Link State Header*</u>  and  a *<u>Link State Data</u>* ; ![1553869326585](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1553869326585.png)
+-   An ***LSA*** is composed of a <u>*Link State Header*</u>  and  a *<u>Link State Data</u>* ; ![1553869326585](assets/1553869326585.png)
+
+    
 
 -   **OSPF configuration command**:  `R(config)#  router ospf id `;   ( $\text{id} \in [1 \:, \: 65535]  $ );
 
@@ -197,7 +199,7 @@
 
 >   **Problem**: IP addresses are not enough to assign a unique IP address to each network host/device !
 >
->   -   ​                      ![1554469332034](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1554469332034.png)
+>   -   ​                      ![1554469332034](assets/1554469332034.png)
 >
 >   | Address Class | Number of NETs Numbers Reserved | NET Address                 |
 >   | :-----------: | :-----------------------------: | :-------------------------- |
@@ -219,7 +221,7 @@
 
     1.  **Static NAT**: `one-to-one` translation (*one private* to *one public*) ;
 
-        .![1554469422912](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1554469422912.png)
+        .![1554469422912](assets/1554469422912.png)
 
         -   Often use to configure the SERVERS in the private NET, because usually the servers requires a permanent public IP address.
 
@@ -227,7 +229,7 @@
 
     2.  **Dynamic NAT**: `N-to-one` translation (*N private* to *one public*);
 
-        .![1554469459635](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1554469459635.png)
+        .![1554469422912](assets/1554469422912-1564142810760.png)
 
         -   It make use of the PORT FIELD (no meaning for router) of the TCP/UDP/Data header;
 
@@ -285,7 +287,7 @@
 
     
 
--   **Ethernet frame**:   ![1556888920815](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1556888920815.png)
+-   **Ethernet frame**:   ![1556888920815](assets/1556888920815.png)
 
     
 
@@ -303,7 +305,7 @@
 
 -   Interface management (*as for the routers*):
 
-![1556889391419](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1556889391419.png)
+![1556889391419](assets/1556889391419.png)
 
 
 
@@ -319,7 +321,7 @@
 
     4.  Reduction of **broadcast traffic** (!!!);
 
-        ![1556890131633](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1556890131633.png)
+        ![1556890131633](assets/1556890131633.png)
 
         
 
@@ -339,7 +341,7 @@
 
     -   **access port**: connected to hosts belonging to a single VLAN;
     -   **trunk port**: receiving and forwarding frames belonging to different VLANs;
-    -   .      ![1556890718027](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1556890718027.png)
+    -   .      ![1556890718027](assets/1556890718027.png)
 
 ##### ACCESS port config
 
@@ -368,7 +370,7 @@
 
 
 -   The <u>broadcast traffic</u> received on <u>an access interface</u> will be forwarded only on the interfaces ”*connected*” to the **same** VLAN of the <u>access port</u>. 
-    .                           ![1556892000929](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1556892000929.png)
+    .                           ![1556892000929](assets/1556892000929.png)
 
 -   Lists all the VLANs configured  and  the associated access interfaces:
     `Switch #  show  vlan  brief`   (*first command - check if there are some VLANs already configured*)
@@ -415,7 +417,7 @@
 -   Each router interface is associated to a VLAN (*an <u>IP address</u> <u>of the VLAN block</u> must be assigned*); 
 -   The <u>**switchports**</u> connected to the router must be <u>configured in **access** mode</u>;
 
-![1557582893517](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1557582893517.png)
+![1557582893517](assets/1557582893517.png)
 
 
 1.  Connect the router to the switch via $N$-links (where $N$ is *the number of VLANs that need to communicate to each other*);
@@ -449,7 +451,7 @@
 -   The **switchport** connected to the router must be configured in **trunk** mode;
     
 
-    .![1557584176181](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1557584176181.png)
+    .![1557584176181](assets/1557584176181.png)
 
 
 
@@ -544,7 +546,7 @@
 -   **Control lists** applied to traffic incoming in/outgoing **from a router**;
 -   **Rules** to determine if packets must be <u>processed and</u> <u>forwarded</u> or <u>blocked</u> <u>and dropped</u> by the <u>router</u>;
 -   Based on the:  *IP addresses* (source  or/and  destination ),  *protocol*,  *direction*,  *port*, etc...
--   Is an **ordered list** of rules:    ![ù1558115944314](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1558115944314.png)
+-   Is an **ordered list** of rules:    ![1558115944314](assets/1558115944314-1564143049825.png)
 
 
 
@@ -566,7 +568,7 @@
 
     
 
-    ![1558116070271](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1558116070271.png)
+    ![1558116070271](assets/1558116070271.png)
 
 
 
@@ -608,10 +610,9 @@
 >   `opertor`  $\in$  [ `lt`, `gt`, `eq`, `neq` ];
     >   `operand`  $-$  a port number;
 
-    >   <u>EX</u>:   `access-list  101  permit  tcp  172.16.6.0  0.0.0.255   any  eq   ftp`; 
-    
-    
-    
+<u>EX</u>: `access-list  101  permit  tcp  172.16.6.0  0.0.0.255   any  eq   ftp`; 
+​   
+
 -    Apply an ACL to an interface:
     `R (config-if)#  {protocol}  access-group   <acl-id-num>  {in | out}`;
 
@@ -665,7 +666,7 @@
 
 -   Limiting the **TELNET** access with a **standard ACL**: 
 
-     ![1559290007521](C:\Users\ivanf\AppData\Roaming\Typora\typora-user-images\1559290007521.png)
+     ![1559290007521](assets/1559290007521.png)
 
 
 
